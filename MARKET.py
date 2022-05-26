@@ -174,7 +174,7 @@ def Ürün_Pen():
         veri_al = liste.selection()[0]
         item = liste.item(veri_al)
         veri_adı.insert(0, item['values'][1])
-        veri_fiyatı.insert(0, item['values'][2])
+        veri_fiyatı.insert(8, item['values'][2])
         veri_kdv.insert(0, item['values'][3])
 
     liste.bind("<Double-1>", aktarma)
