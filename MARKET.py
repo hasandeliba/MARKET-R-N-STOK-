@@ -28,7 +28,7 @@ def Ana_Menü():
         i.destroy()
     pen.title("ANA MENÜ")
     # ANA MENÜ TASLAĞI
-    market_adi=Label(text="BÖTE MARKET",bg="#6200EA",fg="#BBDEFB",font="Helvetica""36")
+    market_adi=Label(text="GÖKTÜRK MARKET",bg="#6200EA",fg="#BBDEFB",font="Helvetica""36")
     market_adi.place(x=120,y=10,width=300,height=70)
     urun_buton = Button(text="ÜRÜN EKRANI", command=Ürün_Pen,bg="#B71C1C",fg="#F3E5F5",font="Helvetica""36")
     urun_buton.place(x=30, y=200, width=200, height=80)
