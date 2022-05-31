@@ -240,11 +240,21 @@ def stok_menu():
     liste.heading("Ad", text="Ürün Adı")
     liste.heading("adet", text="Adet")
 
-    market.execute("""SELECT urun_id,urun_adi, adet FROM stok""")
-    stok_liste = market.fetchall()
-    for i in stok_liste:
-        liste.insert(parent='', index='end', values=(i[0],i[1],i[2]))
-
+    var = StringVar()
+    var.trance("w" , lambda name, index moda ,var=var: callback(var))
+   
+     Label(text="ARANAN ÜRÜN" , font="Helvetica 12 ").place(x=20, y=140)
+     filtre = Entry(textvariable= var, width=30)
+     filtre.place(x=160, y=140, height=30)
+    
+     def callback(x):
+         deger=x.get()
+         market.execute("SELECT urun_id,urun_adi, adet FROM stok WHERE urun_adi LIKE '%"+deger+"%'")
+         stok_liste = market.fetchall()
+         for i in liste.get_children():
+               liste.delete(i)
+         for i in stok_liste:
+             liste.insert(parent='', index='end', values=(i[0],i[1],i[2]))
 # PENCERE OLUŞTURMA
 pen = tk.Tk()
 pen.geometry("550x400+500+200")
